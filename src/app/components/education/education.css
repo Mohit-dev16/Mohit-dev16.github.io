@@ -1,0 +1,126 @@
+.edu-cert-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 32px;
+}
+
+/* Education */
+.edu-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.edu-card {
+  padding: 24px;
+}
+
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  gap: 16px;
+}
+
+.edu-degree {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+}
+
+.edu-period {
+  font-family: var(--font-code);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.edu-inst {
+  color: var(--accent-cyan);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+.score-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(124, 58, 237, 0.1);
+  color: var(--accent-purple-light);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Certifications */
+.cert-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cert-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  position: relative;
+}
+
+.cert-item.highlight {
+  background: rgba(245, 158, 11, 0.05);
+  border-color: rgba(245, 158, 11, 0.2);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.05);
+}
+
+.cert-item.highlight .cert-icon {
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+
+.cert-item.highlight .cert-title {
+  color: var(--accent-orange);
+}
+
+.cert-icon {
+  font-size: 1.5rem;
+}
+
+.cert-title {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.cert-org {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.cert-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.cert-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.cert-link:hover {
+  color: var(--accent-cyan);
+}
+
+@media (max-width: 992px) {
+  .edu-cert-container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}

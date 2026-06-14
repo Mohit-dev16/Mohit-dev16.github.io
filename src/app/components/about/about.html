@@ -1,0 +1,77 @@
+<section class="section about" id="about">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">Get to know the developer behind the code</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text glass-card">
+        <div class="about-intro">
+          <div class="about-avatar clickable" (click)="openImage()">
+            <img src="profile.jpg" alt="Mohit Kumar" class="avatar-img">
+            <div class="avatar-ring"></div>
+          </div>
+          <div>
+            <h3>Mohit Kumar</h3>
+            <p class="about-role">Full Stack Developer @ Clerisy Solutions</p>
+            <p class="about-location">📍 Mohali, Punjab</p>
+          </div>
+        </div>
+
+        <p class="about-description">
+          I'm a passionate engineer who loves turning complex problems into elegant, scalable web applications and intelligent systems. Over the past <strong>3+ years</strong>, I've enjoyed diving deep into the intersection of modern web development and artificial intelligence.
+        </p>
+        <p class="about-description">
+          Whether I'm orchestrating multi-agent AI workflows or architecting robust backends, I care deeply about writing clean, secure code. I'm always eager to explore new technologies, collaborate closely with my team, and build products that genuinely improve people's lives.
+        </p>
+
+        <div class="about-actions" style="margin-top: 32px;">
+          <button (click)="openResume()" class="btn btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            View My Resume
+          </button>
+        </div>
+      </div>
+
+      <div class="about-highlights">
+        @for (item of highlights; track item.title) {
+          <div class="highlight-card glass-card">
+            <span class="highlight-icon">{{ item.icon }}</span>
+            <h4>{{ item.title }}</h4>
+            <p>{{ item.desc }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Resume PDF Drawer -->
+  <div class="resume-drawer-backdrop" [class.open]="isResumeOpen()" (click)="closeResume()"></div>
+  <div class="resume-drawer" [class.open]="isResumeOpen()">
+    <div class="drawer-header">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <h3 style="margin: 0;">Mohit Kumar - Resume</h3>
+      </div>
+      <button class="close-btn" (click)="closeResume()" aria-label="Close">
+        &times;
+      </button>
+    </div>
+    <div class="drawer-content">
+      @if (isResumeOpen()) {
+        <iframe [src]="resumeUrl" width="100%" height="100%" frameborder="0" allow="autoplay"></iframe>
+      }
+    </div>
+  </div>
+
+  <!-- Profile Image Popup Lightbox -->
+  <div class="image-lightbox-backdrop" [class.open]="isImageOpen()" (click)="closeImage()">
+    <div class="image-lightbox-content" (click)="$event.stopPropagation()">
+      <button class="close-btn popup-close" (click)="closeImage()" aria-label="Close">
+        &times;
+      </button>
+      <img src="profile.jpg" alt="Mohit Kumar" class="lightbox-img">
+    </div>
+  </div>
+</section>

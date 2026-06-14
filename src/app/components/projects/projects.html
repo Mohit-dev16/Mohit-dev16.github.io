@@ -1,0 +1,22 @@
+<section class="section projects" id="projects">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Key Projects</h2>
+      <p class="section-subtitle">Highlights of major systems and features I've built</p>
+    </div>
+
+    <div class="projects-grid">
+      @for (project of projects; track project.title) {
+        <div class="project-card glass-card">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-desc">{{ project.description }}</p>
+          <div class="project-tags">
+            @for (tag of project.tags; track tag) {
+              <span class="tag">{{ tag }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

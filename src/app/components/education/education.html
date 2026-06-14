@@ -1,0 +1,46 @@
+<section class="section education" id="education">
+  <div class="container">
+    <div class="edu-cert-container">
+      <!-- Education Section -->
+      <div class="education-section">
+        <h2 class="section-title">Education</h2>
+        <div class="edu-grid">
+          @for (edu of educationList; track edu.degree) {
+            <div class="edu-card glass-card">
+              <div class="edu-header">
+                <h3 class="edu-degree">{{ edu.degree }}</h3>
+                <span class="edu-period">{{ edu.period }}</span>
+              </div>
+              <p class="edu-inst">{{ edu.institution }}</p>
+              <div class="edu-score">
+                <span class="score-badge">{{ edu.score }}</span>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Certifications Section -->
+      <div class="cert-section">
+        <h2 class="section-title">Certifications</h2>
+        <div class="cert-list">
+          @for (cert of certifications; track cert.title) {
+            <div class="cert-item glass-card" [class.highlight]="cert.highlight">
+              <span class="cert-icon">🏆</span>
+              <div class="cert-details">
+                <h4 class="cert-title">
+                  @if (cert.url) {
+                    <a [href]="cert.url" target="_blank" rel="noopener noreferrer" class="cert-link">{{ cert.title }}</a>
+                  } @else {
+                    {{ cert.title }}
+                  }
+                </h4>
+                <p class="cert-org">{{ cert.org }}</p>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

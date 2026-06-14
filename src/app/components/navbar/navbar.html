@@ -1,0 +1,37 @@
+<nav class="navbar" [class.scrolled]="isScrolled()" id="navbar">
+  <div class="nav-container">
+    <a class="nav-logo" (click)="scrollTo('#hero')" id="nav-logo">
+      <span class="logo-bracket">&lt;</span>
+      <span class="logo-text">MK</span>
+      <span class="logo-bracket">/&gt;</span>
+    </a>
+
+    <ul class="nav-links" [class.active]="isMobileMenuOpen()">
+      @for (link of navLinks; track link.href) {
+        <li>
+          <a class="nav-link" (click)="scrollTo(link.href)" [id]="'nav-' + link.label.toLowerCase()">
+            {{ link.label }}
+          </a>
+        </li>
+      }
+      <li class="theme-toggle">
+        <button class="theme-btn" (click)="toggleTheme()" aria-label="Toggle theme" [attr.title]="isDarkTheme() ? 'Switch to Light Mode' : 'Switch to Dark Mode'">
+          @if (isDarkTheme()) {
+            ☀️
+          } @else {
+            🌙
+          }
+        </button>
+      </li>
+      <li class="nav-cta">
+        <a class="btn btn-primary btn-sm" (click)="scrollTo('#contact')" id="nav-hire-me">Hire Me</a>
+      </li>
+    </ul>
+
+    <button class="hamburger" [class.active]="isMobileMenuOpen()" (click)="toggleMobileMenu()" id="hamburger-btn" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
