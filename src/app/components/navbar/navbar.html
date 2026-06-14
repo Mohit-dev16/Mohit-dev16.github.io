@@ -6,32 +6,33 @@
       <span class="logo-bracket">/&gt;</span>
     </a>
 
-    <ul class="nav-links" [class.active]="isMobileMenuOpen()">
-      @for (link of navLinks; track link.href) {
-        <li>
-          <a class="nav-link" (click)="scrollTo(link.href)" [id]="'nav-' + link.label.toLowerCase()">
-            {{ link.label }}
-          </a>
+    <div class="nav-right" style="display: flex; align-items: center; gap: 8px;">
+      <ul class="nav-links" [class.active]="isMobileMenuOpen()">
+        @for (link of navLinks; track link.href) {
+          <li>
+            <a class="nav-link" (click)="scrollTo(link.href)" [id]="'nav-' + link.label.toLowerCase()">
+              {{ link.label }}
+            </a>
+          </li>
+        }
+        <li class="nav-cta">
+          <a class="btn btn-primary btn-sm" (click)="scrollTo('#contact')" id="nav-hire-me">Hire Me</a>
         </li>
-      }
-      <li class="theme-toggle">
-        <button class="theme-btn" (click)="toggleTheme()" aria-label="Toggle theme" [attr.title]="isDarkTheme() ? 'Switch to Light Mode' : 'Switch to Dark Mode'">
-          @if (isDarkTheme()) {
-            ☀️
-          } @else {
-            🌙
-          }
-        </button>
-      </li>
-      <li class="nav-cta">
-        <a class="btn btn-primary btn-sm" (click)="scrollTo('#contact')" id="nav-hire-me">Hire Me</a>
-      </li>
-    </ul>
+      </ul>
 
-    <button class="hamburger" [class.active]="isMobileMenuOpen()" (click)="toggleMobileMenu()" id="hamburger-btn" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+      <button class="theme-btn" (click)="toggleTheme()" aria-label="Toggle theme" [attr.title]="isDarkTheme() ? 'Switch to Light Mode' : 'Switch to Dark Mode'">
+        @if (isDarkTheme()) {
+          ☀️
+        } @else {
+          🌙
+        }
+      </button>
+
+      <button class="hamburger" [class.active]="isMobileMenuOpen()" (click)="toggleMobileMenu()" id="hamburger-btn" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </div>
 </nav>

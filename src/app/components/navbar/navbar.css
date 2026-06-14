@@ -135,8 +135,9 @@
     width: 280px;
     height: 100vh;
     flex-direction: column;
-    background: rgba(10, 10, 26, 0.97);
+    background: var(--navbar-scrolled);
     backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
     padding: 100px 40px 40px;
     gap: 8px;
     transition: right var(--transition-base);
