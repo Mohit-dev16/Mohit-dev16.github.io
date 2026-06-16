@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { AnalyticsService } from '../../services/analytics.service';
 
 @Component({
   selector: 'app-about',
@@ -19,13 +20,14 @@ export class About {
     { icon: '🔐', title: 'Security', desc: 'OAuth, secure APIs, Google Recaptcha V2 & V3, and authentication systems' }
   ];
 
-  constructor(private sanitizer: DomSanitizer) {
+  constructor(private sanitizer: DomSanitizer, private analytics: AnalyticsService) {
     this.resumeUrl = this.sanitizer.bypassSecurityTrustResourceUrl('https://drive.google.com/file/d/1YpzIbcOwSiB-lH72oQlKrovU6ry-j5MO/preview');
   }
 
   openResume() {
     this.isResumeOpen.set(true);
     document.body.style.overflow = 'hidden';
+    this.analytics.trackResumeOpened();
   }
 
   closeResume() {
@@ -36,6 +38,7 @@ export class About {
   openImage() {
     this.isImageOpen.set(true);
     document.body.style.overflow = 'hidden';
+    this.analytics.trackProfileImageOpened();
   }
 
   closeImage() {
@@ -45,3 +48,4 @@ export class About {
     }
   }
 }
+

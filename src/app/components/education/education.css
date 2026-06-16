@@ -124,3 +124,43 @@
     gap: 48px;
   }
 }
+
+@media (max-width: 480px) {
+  .edu-card {
+    padding: 16px;
+  }
+
+  .edu-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .edu-degree {
+    font-size: 1rem;
+  }
+
+  .edu-inst {
+    font-size: 0.85rem;
+  }
+
+  .cert-item {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+
+  .cert-icon {
+    font-size: 1.2rem;
+  }
+
+  .cert-title {
+    font-size: 0.88rem;
+  }
+
+  .cert-org {
+    font-size: 0.8rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+}

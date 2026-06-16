@@ -311,9 +311,45 @@ a:hover {
 @media (max-width: 768px) {
   :root {
     --section-padding: 60px 0;
+    --container-padding: 0 16px;
   }
 
   .section-title {
     font-size: clamp(1.6rem, 5vw, 2.2rem);
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .glass-card {
+    padding: 20px;
+  }
+
+  .btn {
+    padding: 10px 22px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-padding: 48px 0;
+    --container-padding: 0 12px;
+  }
+
+  .glass-card {
+    padding: 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
   }
 }

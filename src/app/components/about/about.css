@@ -189,11 +189,40 @@
   .about-highlights {
     grid-template-columns: 1fr 1fr;
   }
+
+  .about-avatar.clickable:hover {
+    transform: scale(1.1);
+  }
+
+  .highlight-card {
+    padding: 16px;
+  }
+
+  .highlight-icon {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
 }
 
 @media (max-width: 480px) {
   .about-highlights {
     grid-template-columns: 1fr;
+  }
+
+  .about-intro {
+    gap: 14px;
+  }
+
+  .about-intro h3 {
+    font-size: 1.1rem;
+  }
+
+  .about-role {
+    font-size: 0.8rem;
+  }
+
+  .about-description {
+    font-size: 0.88rem;
   }
 }
 
@@ -285,7 +314,16 @@
 
 @media (max-width: 768px) {
   .popup-close {
-    top: -50px;
-    right: 0;
+    top: -48px;
+    right: 4px;
+  }
+
+  .image-lightbox-content {
+    max-width: 95vw;
+    padding: 0 8px;
+  }
+
+  .lightbox-img {
+    max-height: 75vh;
   }
 }

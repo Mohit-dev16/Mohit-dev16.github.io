@@ -1,6 +1,6 @@
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 24px;
 }
 
@@ -41,4 +41,19 @@
 
 .skill-tag:hover {
   transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .skill-category {
+    padding: 16px;
+  }
+
+  .skill-tag {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+
+  .skills-list {
+    gap: 8px;
+  }
 }

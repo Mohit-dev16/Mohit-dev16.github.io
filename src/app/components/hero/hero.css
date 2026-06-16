@@ -215,11 +215,19 @@
 @media (max-width: 768px) {
   .hero {
     padding: 100px 0 60px;
+    min-height: auto;
   }
 
   .hero-actions {
     flex-direction: column;
     align-items: center;
+    gap: 12px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
   }
 
   .hero-stats {
@@ -232,5 +240,48 @@
 
   .scroll-indicator {
     display: none;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 28px;
+  }
+
+  .hero-badge {
+    font-size: 0.8rem;
+    padding: 6px 16px;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 90px 0 48px;
+  }
+
+  .hero-typing {
+    font-size: 0.85rem;
+  }
+
+  .hero-stats {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .stat-number {
+    font-size: 1.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+  }
+
+  .stat-divider {
+    height: 30px;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
   }
 }
